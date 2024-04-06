@@ -31,4 +31,10 @@ jobs:
               run: docker build -t augustod3v/api-ec2 .
             
             - name: Push image to Dockerhub
-              run: docker push augustod3v/api-ec2
+              run: docker push augustod3v/api-ec2 
+
+    build-on-aws:
+        runs-on: self-hosted
+        steps: 
+          - name: create folder test
+            run: mkdir test-runner
