@@ -34,7 +34,11 @@ jobs:
               run: docker push augustod3v/api-ec2 
 
     build-on-aws:
+        needs: build
         runs-on: self-hosted
         steps: 
+          - name: navigate to root
+            run: cd /
+
           - name: create folder test
             run: mkdir test-runner
