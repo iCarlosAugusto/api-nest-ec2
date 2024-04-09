@@ -1,5 +1,7 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY dist dist
-CMD ["node", "dist/main.js"]
+COPY . .
+RUN npm install
+RUN npm run build
 EXPOSE 3000
+CMD ["node", "dist/main.js"]
